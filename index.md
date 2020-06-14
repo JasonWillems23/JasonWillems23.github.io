@@ -512,6 +512,14 @@ int main(int argc, char* argv[]) {
 
 **Enhancement Three - Databases**
 
+A.)  The artifact that I have chosen to enhance for the Databases category is the final project that I completed in December of 2018 for my Introduction to SQL course.  This artifact uses MySQL commands to create, read, update and delete information within a database and also displays that information based on specific and customizable queries. 
+
+B.)  I chose to include this artifact in my ePortfolio because MySQL is an area of Computer Science that I want to pursue when I finish with my degree program.  By enhancing this artifact with more complex queries, I will be able to showcase my comprehension of the fundamental aspects of using SQL to manage and manipulate sensitive information located within any database.  Successfully implementing more sophisticated query commands will give the artifact increased customizability that can be adopted to utilize the data in more meaningful ways.  
+
+C.)  I do believe that I have met the objectives that I have set out to accomplish in my enhancement plan.  I have implemented a more complex query for added functionality that allows the data to be tailored to the needs of those who need to access it.  Additionally, I added a command to back up the entire database to a separate disk drive, as well as, a second command that only backs up the changes since the previous backup.  Both of which add an extremely important layer of redundancy to the database in the event of data loss.  
+
+D.)  One of the major challenges that I faced while creating the enhancements for this artifact was the length of time that has gone by since I last used the concepts regarding relational database management.  As I was refamiliarizing myself and executing the enhancements, my desire to pursue MySQL in a professional capacity was reinforced and I became excited to start the process of drastically improving my proficiency of MySQL and database management post-graduation.  
+
 
 
 
