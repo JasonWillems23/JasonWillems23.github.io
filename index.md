@@ -13,7 +13,9 @@ B.)  I chose to include this particular artifact and convert it into another lan
 C.)  I believe that I have met the course objectives for this artifact and have achieved the functionality that I set out to create upon converting this program from C++ to Java.  With some much appreciated guidance I was able to recreate a program that behaves in a very similar way to the original artifact using the concepts of the Java programming language.    	
 
 D.)  I learned how to apply and implement some of the concepts of C++  and recreate them into Java.
-	Some of the elements were not as simple as rewriting them in another language, I had to learn how each concept worked and how each language utilizes that concept in their language.  Some concepts diverged to a point that caused confusion and lead to mistakes.  
+	Some of the elements were not as simple as rewriting them in another language, I had to learn how each concept worked and how each language utilizes that concept in their language.  Some concepts diverged to a point that caused confusion and lead to mistakes. 
+	
+[NewBidApp.java](https://github.com/JasonWillems23/JasonWillems23.github.io/blob/master/NewBidApp.java)	
 
 ```java
 import java.util.Scanner;
