@@ -1,5 +1,11 @@
 **JasonWillems23's ePortfolio**
 
+**Professional Self-Assessment**
+
+A.)  
+
+B.)  
+
 **Code Review:** 
 
 [2-2 Milestone One Code Review](https://github.com/JasonWillems23/JasonWillems23.github.io/blob/master/2-2%20Milestone%20Code%20Review.mov)
