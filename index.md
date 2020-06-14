@@ -520,6 +520,132 @@ C.)  I do believe that I have met the objectives that I have set out to accompli
 
 D.)  One of the major challenges that I faced while creating the enhancements for this artifact was the length of time that has gone by since I last used the concepts regarding relational database management.  As I was refamiliarizing myself and executing the enhancements, my desire to pursue MySQL in a professional capacity was reinforced and I became excited to start the process of drastically improving my proficiency of MySQL and database management post-graduation.  
 
+[Category_Three_Capstone.txt](https://github.com/JasonWillems23/JasonWillems23.github.io/blob/master/Category_Three_Capstone.txt)
+
+```sql
+
+USE messaging;
+
+INSERT INTO person (first_name, last_name)
+VALUES
+("Jason", "Willems");
+
+ALTER TABLE messaging.person
+ADD contact_phone_number INT(11) NOT NULL;
+
+UPDATE messaging.person
+SET contact_phone_number = 8478154570
+WHERE person_id = 7;
+
+DELETE FROM messaging.person
+WHERE first_name = "Diana"
+AND last_name = "Taurasi";
+
+ALTER TABLE messaging.contact_list
+ADD favorite VARCHAR(10) DEFAULT NULL;
+
+UPDATE messaging.contact_list
+SET favorite = "y"
+WHERE contact_id = 1;
+
+UPDATE messaging.contact_list
+SET favorite = "n"
+WHERE contact_id != 1;
+
+INSERT INTO messaging.contact_list (person_id, contact_id, favorite)
+VALUES
+(1, 7, "y"),
+(7, 2, "n"),
+(7, 4, "n");
+
+CREATE TABLE messaging.image (
+image_id INT(8) NOT NULL AUTO_INCREMENT,
+image_name VARCHAR(50),
+image_location VARCHAR(250),
+PRIMARY KEY (image_id)
+) AUTO_INCREMENT = 1;
+
+CREATE TABLE message_image (
+message_id INT(8) NOT NULL,
+image_id INT(8) NOT NULL,
+PRIMARY KEY (message_id, image_id),
+FOREIGN KEY (message_id) REFERENCES message (message_id),
+FOREIGN KEY (image_id) REFERENCES image (image_id)
+);
 
 
+INSERT INTO messaging.image (image_name, image_location)
+VALUES
+("Selfie", "C:\Users\PC\Pictures"),
+("My dog", "C:\Users\PC\Pictures"),
+("First car", "C:\Users\PC\Pictures"),
+("Daughter", "C:\Users\PC\Pictures"),
+("Vacation", "C:\Users\PC\Pictures");
+
+INSERT INTO messaging.message_image (message_id, image_id)
+VALUES
+(1, 5),
+(5, 4), 
+(5, 2),
+(3, 3),
+(2, 1);
+
+SELECT 
+sender.first_name AS "Sender's first name",
+sender.last_name AS "Sender's last name",
+receiver.first_name AS "Receiver's first name", 
+receiver.last_name AS "Receiver's last name",
+message_id AS "Message ID",
+message AS "Message", 
+send_datetime AS "Message Timestamp"
+FROM message
+RIGHT JOIN person AS sender ON 
+sender.person_id = message.sender_id
+RIGHT JOIN person AS receiver ON 
+receiver.person_id = message.receiver_id
+WHERE sender_id = 1;
+
+SELECT COUNT(message.message_id) AS "Count of messages", 
+person_id AS "Person ID",
+first_name AS "First Name", 
+last_name AS "Last Name"
+FROM person
+LEFT JOIN message ON 
+message.sender_id = person.person_id
+WHERE person_id > 0
+GROUP BY person_id;
+
+SELECT 
+message.message_id AS "Message ID",
+message AS "Message",
+send_datetime AS "Message Timestamp",
+image.image_name AS "First Image Name",
+image.image_location AS "First Image Location"
+FROM message
+INNER JOIN message_image ON 
+message.message_id = message_image.message_id
+INNER JOIN image ON 
+message_image.image_id = image.image_id
+ORDER BY message_image.image_id ASC;
+
+SELECT
+person.person_id AS "ID",
+person.first_name AS "First Name",
+person.last_name AS "Last Name", 
+contact_list.favorite AS Favorite,
+CASE WHEN contact_list.favorite = "y" THEN 'This person was favorited!'
+     ELSE 'This person was not favorited :('
+     END AS FavoritedList,
+FROM contact_list
+FULL OUTER JOIN person_id ON contact_list.person_id = person.person._id
+ORDER BY person.last_name ASC;
+
+BACKUP DATABASE messaging
+TO DISK = 'D:\backups\messaging.bak';
+
+BACKUP DATABASE messaging
+TO DISK = 'D:\backups\messaging.bak'
+WITH DIFFERENTIAL;
+
+```
 
